@@ -33,7 +33,6 @@ protected_ranges = [
   81..84,
   111..114
 ]
-offset_protected_ranges = protected_ranges.flat_map { |r| (r.first - offset)..(r.last - offset) }
 
 min = 1
 max = 10
@@ -41,12 +40,12 @@ screws = min..max
 
 # Generate a list of measurements for each number of screws
 locations = screws.map do |n|
-  interval = length.to_f / n
-  loc      = [offset]
+  interval     = length.to_f / n
+  measurements = [offset] # We always start at the initial offset
 
-  n.times { |i| loc.push interval + loc[i] }
+  n.times { |i| measurements.push interval + measurements[i] }
 
-  loc
+  measurements
 end
 
 # Remove any location lists
