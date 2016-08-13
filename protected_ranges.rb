@@ -1,5 +1,15 @@
-# Find a number of screws that divides into a list of measurements
-# that all lie outside the protected ranges
+# The scenario this was built to solve is this:
+#
+# I had an 11 foot piece of wood I wanted to mount under my cabinets
+# but there were selected locations I knew I did NOT want to drill
+# into.  I wanted to find a nice, even interval of some number of
+# holes, but with a set distance in from either end of the stock.
+#
+# Goal:
+#   Find a number of screws that divides into a list of measurements
+#   that all lie outside some list of protected ranges
+#
+# TODO: Make it take command line arguments instead of hard-coded values
 
 require 'pry-byebug'
 require 'awesome_print'
